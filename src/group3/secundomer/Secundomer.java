@@ -14,32 +14,37 @@ package group3.secundomer;
 import java.util.Scanner;
 
 public class Secundomer {
-
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Set Start:  S ");
+        long minutes = scanner.nextInt();
+        String str = scanner.nextLine();
+        printEachSec(str);
+
         System.out.println("Set seconds");
-
-        String seconds = scanner.nextLine();
-        int parsed = Integer.parseInt(seconds);
-        printEachSec(parsed);
+        long seconds = scanner.nextInt();
+        int start = 0;
     }
-
-    // message from AR: исправил метод, привел к рабочему состоянию
-    public static void printEachSec(int time) {
-        while (time > 0) {
-            sleep(1000);
-            System.out.println(time--);
+        public static void printEachSec(String str) {
+            int start=0;
+            while (!finish) {
+                sleep(1000);
+                System.out.println(start++);
+            }
+            System.out.println("Time is over");
         }
-        System.out.println("Time is over");
-    }
+        public static void finish(String f){
+            System.out.println("Set");
+        }
 
-    public static void sleep(long sleepDurationINMs) {
-        try {
-            Thread.sleep(sleepDurationINMs);
-        } catch (InterruptedException e) {
-            System.out.println("Error: " + e.getMessage());
+        public static void sleep(long sleepDurationINMs) {
+            try {
+                Thread.sleep(sleepDurationINMs);
+            } catch (InterruptedException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
         }
     }
-}
 
 
