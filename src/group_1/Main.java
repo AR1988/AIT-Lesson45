@@ -2,6 +2,7 @@ package group_1;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,7 +31,6 @@ public class Main {
                 i++;
             }
         }, 0, 1000);
-
         JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
         frame.setBounds(500, 300, 300, 100);
